@@ -396,5 +396,15 @@
       "ogama"
     ],
     "stars": 3
-  }	
+  },
+  {
+    "name": "redisims",
+    "license": "MIT",
+    "repository": "https://github.com/Clement-Jean/RedisIMS",
+    "description": "A lightweight Redis module following the If Modified Since (IMS) pattern for caching",
+    "authors": [
+      "Clement-Jean"
+    ],
+    "stars": 0
+  }
 ]

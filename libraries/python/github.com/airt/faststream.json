@@ -1,0 +1,4 @@
+{
+    "name": "FastStream",
+    "description": "A powerful and easy-to-use Python framework for building asynchronous services interacting with event streams such as Apache Kafka, RabbitMQ, NATS and Redis."
+}

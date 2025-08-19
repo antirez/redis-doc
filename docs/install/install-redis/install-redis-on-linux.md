@@ -33,6 +33,12 @@ sudo apt-get update
 sudo apt-get install redis
 {{< / highlight  >}}
 
+Lastly, start the Redis server like so:
+
+{{< highlight bash  >}}
+sudo service redis-server start
+{{< / highlight  >}}
+
 ## Install from Snapcraft
 
 The [Snapcraft store](https://snapcraft.io/store) provides [Redis packages](https://snapcraft.io/redis) that can be installed on platforms that support snap.

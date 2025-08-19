@@ -1,0 +1,8 @@
+{
+    "name": "redis-delay-queue",
+    "license": "MIT",
+    "description": "A redis module for delay queue.",
+    "github": [
+        "if-nil"
+    ]
+}

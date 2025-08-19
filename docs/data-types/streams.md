@@ -535,8 +535,6 @@ while true
 
         # Acknowledge the message as processed
         r.xack(:my_stream_key,GroupName,id)
-
-        $lastid = id
     }
 end
 ```

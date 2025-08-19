@@ -458,6 +458,10 @@ It won't be included when `INFO` or `INFO ALL` are called, and it is returned on
 *   `eventloop_duration_cron_sum`: Total time consumption of cron in microseconds (including serverCron and beforeSleep, but excluding IO and AOF flushing)
 *   `eventloop_duration_max`: The maximal time spent in a single eventloop cycle in microseconds
 *   `eventloop_cmd_per_cycle_max`: The maximal number of commands processed in a single eventloop cycle
+*   `allocator_allocated_lua`: Total bytes allocated from the allocator specifically for Lua, including internal-fragmentation.
+*   `allocator_active_lua`: Total bytes in the allocator active pages specifically for Lua, this includes external-fragmentation.
+*   `allocator_resident_lua`: Total bytes resident (RSS) in the allocator specifically for Lua, this includes pages that can be released to the OS (by `MEMORY PURGE`, or just waiting).
+*   `allocator_frag_bytes_lua`: Delta between `allocator_active_lua` and `allocator_allocated_lua`.
 
 [hcgcpgp]: http://code.google.com/p/google-perftools/
 

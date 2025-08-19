@@ -6888,6 +6888,67 @@
             "allow_busy"
         ]
     },
+    "HEXPIRE": {
+      "summary": "Set an expiration (TTL or time to live) on one or more fields of a given hash key.",
+      "since": "7.4.0",
+      "group": "connection",
+      "complexity": "O(N)",
+      "history": [
+        [
+          "7.4.0",
+          "Added HEXPIRE."
+        ]
+      ],
+      "acl_categories": [
+        "@write",
+        "@hash",
+        "@fast"
+      ],
+      "arity": -4,
+      "key_specs": [
+        {
+          "begin_search": {
+            "type": "index",
+            "spec": {
+              "index": 1
+            }
+          },
+          "find_keys": {
+            "type": "range",
+            "spec": {
+              "lastkey": 0,
+              "keystep": 1,
+              "limit": 0
+            }
+          },
+          "RW": true,
+          "update": true
+        }
+      ],
+      "arguments": [
+        {
+          "name": "key",
+          "type": "key",
+          "display_text": "key",
+          "key_spec_index": 0
+        },
+        {
+          "name": "field",
+          "type": "string",
+          "display_text": "field"
+        },
+        {
+          "name": "seconds",
+          "type": "integer",
+          "display_text": "seconds"
+        }
+      ],
+      "command_flags": [
+        "write",
+        "denyoom",
+        "fast"
+      ]
+    }
     "HEXISTS": {
         "summary": "Determines whether a field exists in a hash.",
         "since": "2.0.0",

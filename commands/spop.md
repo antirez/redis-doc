@@ -6,6 +6,16 @@ By default, the command pops a single member from the set. When provided with
 the optional `count` argument, the reply will consist of up to `count` members,
 depending on the set's cardinality.
 
+@return
+
+* When called without the `count` argument:
+
+  * @bulk-string-reply: the removed member, or `nil` when `key` does not exist.
+
+* When called with the `count` argument:
+
+  *  @array-reply: the removed members, or an empty array when `key` does not exist.
+
 @examples
 
 ```cli

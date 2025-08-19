@@ -6,7 +6,8 @@ administrative overheads that a key and its value require.
 
 For nested data types, the optional `SAMPLES` option can be provided, where
 `count` is the number of sampled nested values. The samples are averaged to estimate the total size.
-By default, this option is set to `5`. To sample the all of the nested values, use `SAMPLES 0`.
+By default, this option is set to `5`. To retrieve an accurate value of the total allocated memory 
+instead of an estimate, by summing up all nested values, use `SAMPLES 0`.
 
 @examples
 

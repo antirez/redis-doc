@@ -17,6 +17,18 @@ The `SET` command supports a set of options that modify its behavior:
 
 Note: Since the `SET` command options can replace `SETNX`, `SETEX`, `PSETEX`, `GETSET`, it is possible that in future versions of Redis these commands will be deprecated and finally removed.
 
+@return
+
+* @simple-string-reply: `OK` if `SET` was executed correctly.
+
+* @nil-reply: `(nil)` if the `SET` operation was not performed because the user specified the `NX` or `XX` option but the condition was not met.
+
+* If the command is issued with the `!GET` option, the above does not apply. It will instead reply as follows, regardless if the `SET` was actually performed:
+
+  * @bulk-string-reply: the old string value stored at key.
+
+  * @nil-reply: `(nil)` if the key did not exist.
+
 @examples
 
 ```cli

@@ -4,7 +4,7 @@ specified by `numkeys`.
 
 Keys that do not exist are considered to be empty sets.
 
-If `destination` already exists, it is overwritten.
+If `destination` already exists, it is overwritten (when the difference is nonempty) or deleted (when the difference is empty).
 
 @examples
 

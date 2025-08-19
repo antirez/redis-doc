@@ -11,7 +11,7 @@ be equal to the number of input sorted sets.
 
 For a description of the `WEIGHTS` and `AGGREGATE` options, see `ZUNIONSTORE`.
 
-If `destination` already exists, it is overwritten.
+If `destination` already exists, it is overwritten (when the intersection is nonempty) or deleted (when the intersection is empty).
 
 @examples
 

@@ -324,6 +324,7 @@ Here is the meaning of all fields in the **stats** section:
 *   `eventloop_duration_cmd_sum`: Total time spent on executing commands in microseconds
 *   `instantaneous_eventloop_cycles_per_sec`: Number of eventloop cycles per second
 *   `instantaneous_eventloop_duration_usec`: Average time spent in a single eventloop cycle in microseconds
+*   `instantaneous_command_duration_usec`: Average time spent in a single command in microseconds
 *   `acl_access_denied_auth`: Number of authentication failures
 *   `acl_access_denied_cmd`: Number of commands rejected because of access denied to the command
 *   `acl_access_denied_key`: Number of commands rejected because of access denied to a key

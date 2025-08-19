@@ -55,7 +55,7 @@ When `COUNT` is used and no match is found, an empty array is returned. However 
 
 Finally, the `MAXLEN` option tells the command to compare the provided element only with a given maximum number of list items. So for instance specifying `MAXLEN 1000` will make sure that the command performs only 1000 comparisons, effectively running the algorithm on a subset of the list (the first part or the last part depending on the fact we use a positive or negative rank). This is useful to limit the maximum complexity of the command. It is also useful when we expect the match to be found very early, but want to be sure that in case this is not true, the command does not take too much time to run.
 
-When `MAXLEN` is used, it is possible to specify 0 as the maximum number of comparisons, as a way to tell the command we want unlimited comparisons. This is better than giving a very large `MAXLEN` option because it is more general.
+When `MAXLEN` is used, it is possible to specify 0 as the maximum number of comparisons, as a way to tell the command we want unlimited comparisons. This is better than giving a very large `MAXLEN` option because it is more general. Please note, however, that using 0 with `MAXLEN` is effectively same as not using `MAXLEN` at all.
 
 @examples
 
@@ -63,4 +63,6 @@ When `MAXLEN` is used, it is possible to specify 0 as the maximum number of comp
 RPUSH mylist a b c d 1 2 3 4 3 3 3
 LPOS mylist 3
 LPOS mylist 3 COUNT 0 RANK 2
+LPOS mylist 3 COUNT 0 MAXLEN 11
+LPOS mylist 3 COUNT 0
 ```

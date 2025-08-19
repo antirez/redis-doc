@@ -183,6 +183,26 @@ Once we get some replies, the next call will be something like:
 
 And so forth.
 
+## The special `+` ID
+
+It is sometimes desirable to read the last entry in a stream. For a single
+stream this can be easily achieved using the `XREVRANGE` command, like so:
+
+```
+> XREVRANGE stream + - COUNT 1
+```
+But if there are many streams involved, this approach is quickly becoming
+too slow, having to issue a command per stream.
+Instead, starting from redis 8.0, the `+` sign can be used as a special ID,
+requesting the last available entry in a stream. For example:
+
+```
+> XREAD STREAM streamA streamB streamC streamD + + + +
+```
+
+Note that when using this special ID for a stream, the **COUNT** option will
+be ignored (for the specific stream) since only the last entry can be returned.
+
 ## How multiple clients blocked on a single stream are served
 
 Blocking list operations on lists or sorted sets have a *pop* behavior.

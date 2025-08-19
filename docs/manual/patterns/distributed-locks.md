@@ -31,8 +31,7 @@ complex or alternative designs.
 Before describing the algorithm, here are a few links to implementations
 already available that can be used for reference.
 
-* [Redlock-rb](https://github.com/antirez/redlock-rb) (Ruby implementation). There is also a [fork of Redlock-rb](https://github.com/leandromoreira/redlock-rb) that adds a gem for easy distribution.
-* [Redlock-py](https://github.com/SPSCommerce/redlock-py) (Python implementation).
+* [Redlock-rb](https://github.com/leandromoreira/redlock-rb) (Ruby implementation).
 * [Pottery](https://github.com/brainix/pottery#redlock) (Python implementation).
 * [Aioredlock](https://github.com/joanvila/aioredlock) (Asyncio Python implementation).
 * [Redlock-php](https://github.com/ronnylt/redlock-php) (PHP implementation).

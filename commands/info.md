@@ -428,6 +428,9 @@ For each error type, the following line is added:
 
 *   `errorstat_XXX`: `count=XXX`
 
+If the server detects that this section got flooded with too many errors, it'll get disabled, show a single `ERRORSTATS_DISABLED` error, and print the errors to the server log.
+This can be reset by `CONFIG RESETSTAT`.
+
 The **sentinel** section is only available in Redis Sentinel instances. It consists of the following fields:
 
 *   `sentinel_masters`: Number of Redis masters monitored by this Sentinel instance
@@ -463,4 +466,4 @@ It won't be included when `INFO` or `INFO ALL` are called, and it is returned on
 
 **A note about the word slave used in this man page**: Starting with Redis 5, if not for backward compatibility, the Redis project no longer uses the word slave. Unfortunately in this command the word slave is part of the protocol, so we'll be able to remove such occurrences only when this API will be naturally deprecated.
 
-**Modules generated sections**: Starting with Redis 6, modules can inject their info into the `INFO` command, these are excluded by default even when the `all` argument is provided (it will include a list of loaded modules but not their generated info fields). To get these you must use either the `modules` argument or `everything`.,
+**Modules generated sections**: Starting with Redis 6, modules can inject their info into the `INFO` command, these are excluded by default even when the `all` argument is provided (it will include a list of loaded modules but not their generated info fields). To get these you must use either the `modules` argument or `everything`.

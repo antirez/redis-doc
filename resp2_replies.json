@@ -641,7 +641,7 @@
   ],
   "LINDEX": [
     "One of the following:",
-    "* [Nil reply](/docs/reference/protocol-spec#bulk-strings): when _index_ is out of range.",
+    "* [Simple error reply](/docs/reference/protocol-spec#simple-errors): when _index_ is out of range.",
     "* [Bulk string reply](/docs/reference/protocol-spec#bulk-strings): the requested element."
   ],
   "LINSERT": [

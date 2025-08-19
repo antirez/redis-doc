@@ -13,26 +13,26 @@ Redis contains an implementation of the Gopher protocol, as specified in
 the [RFC 1436](https://www.ietf.org/rfc/rfc1436.txt).
 
 The Gopher protocol was very popular in the late '90s. It is an alternative
-to the web, and the implementation both server and client side is so simple
-that the Redis server has just 100 lines of code in order to implement this
-support.
+to the web, and the implementation of both server and client side is so simple
+that Redis server implements it in just 100 lines of code.
 
-What do you do with Gopher nowadays? Well Gopher never *really* died, and
-lately there is a movement in order for the Gopher more hierarchical content
-composed of just plain text documents to be resurrected. Some want a simpler
-internet, others believe that the mainstream internet became too much
-controlled, and it's cool to create an alternative space for people that
-want a bit of fresh air.
+What do you do with Gopher nowadays? Well, Gopher never *really* died, and
+lately there is a movement to resurect Gopher's more hierarchical content
+composed of just plain text documents. Some want a simpler internet, others 
+believe that the mainstream internet became too much controlled, and it's cool 
+to create an alternative space for people that want a bit of fresh air.
 
-Anyway, for the 10th birthday of the Redis, we gave it the Gopher protocol
-as a gift.
+Anyway, for the 10th birthday of Redis, we gave the Gopher protocol as a gift.
 
 ## How it works
 
-The Redis Gopher support uses the inline protocol of Redis, and specifically
-two kind of inline requests that were anyway illegal: an empty request
-or any request that starts with "/" (there are no Redis commands starting
-with such a slash). Normal RESP2/RESP3 requests are completely out of the
+Gopher support in Redis uses the inline protocol of Redis, and specifically
+two kinds of inline requests that were anyway illegal:
+
+1) Empty request.
+2) Request that starts with "/" (there are no Redis commands starting with such a slash).
+
+Normal RESP2/RESP3 requests are completely out of the
 path of the Gopher protocol implementation and are served as usually as well.
 
 If you open a connection to Redis when Gopher is enabled and send it
@@ -45,11 +45,11 @@ talking), you likely need a script such as the one in [https://github.com/antire
 ## SECURITY WARNING
 
 If you plan to put Redis on the internet in a publicly accessible address
-to server Gopher pages **make sure to set a password** to the instance.
+to serve Gopher pages **make sure to set a password** to the instance.
 Once a password is set:
 
-1. The Gopher server (when enabled, not by default) will kill serve content via Gopher.
-2. However other commands cannot be called before the client will authenticate.
+1. The Gopher server (when enabled, not by default) will serve content via Gopher.
+2. However the client needs to authenticate before calling other commands.
 
 So use the `requirepass` option to protect your instance.
 

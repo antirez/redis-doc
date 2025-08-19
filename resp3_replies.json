@@ -1271,7 +1271,6 @@
   ],
   "ZADD": [
     "Any of the following:",
-    "* [Null reply](/docs/reference/protocol-spec#nulls): if the operation was aborted because of a conflict with one of the _XX/NX/LT/GT_ options.",
     "* [Integer reply](/docs/reference/protocol-spec#integers): the number of new members when the _CH_ option is not used.",
     "* [Integer reply](/docs/reference/protocol-spec#integers): the number of new or updated members when the _CH_ option is used.",
     "* [Double reply](/docs/reference/protocol-spec#doubles): the updated score of the member when the _INCR_ option is used."

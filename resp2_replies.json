@@ -1206,7 +1206,6 @@
   ],
   "ZADD": [
     "Any of the following:",
-    "* [Nil reply](/docs/reference/protocol-spec#bulk-strings): if the operation was aborted because of a conflict with one of the _XX/NX/LT/GT_ options.",
     "* [Integer reply](/docs/reference/protocol-spec#integers): the number of new members when the _CH_ option is not used.",
     "* [Integer reply](/docs/reference/protocol-spec#integers): the number of new or updated members when the _CH_ option is used.",
     "* [Bulk string reply](/docs/reference/protocol-spec#bulk-strings): the updated score of the member when the _INCR_ option is used."

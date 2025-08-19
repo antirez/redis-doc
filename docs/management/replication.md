@@ -38,7 +38,7 @@ modes.
 You can check the Redis Sentinel or Redis Cluster documentation for more information
 about high availability and failover. The rest of this document mainly describes the basic characteristics of Redis basic replication.
 
-### Important facts about Redis replication
+## Important facts about Redis replication
 
 * Redis uses asynchronous replication, with asynchronous replica-to-master acknowledges of the amount of data processed.
 * A master can have multiple replicas.

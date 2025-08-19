@@ -19,7 +19,7 @@ such information, like in the following diagram:
 
     +-------------+                                +----------+
     |             | ------- GET user:1234 -------> |          |
-    | Application |                                | Database |
+    | Application |                                |   Redis  |
     |             | <---- username = Alice ------- |          |
     +-------------+                                +----------+
 
@@ -29,7 +29,7 @@ reuse such replies later, without contacting the database again:
 
     +-------------+                                +----------+
     |             |                                |          |
-    | Application |       ( No chat needed )       | Database |
+    | Application |       ( No chat needed )       |   Redis  |
     |             |                                |          |
     +-------------+                                +----------+
     | Local cache |

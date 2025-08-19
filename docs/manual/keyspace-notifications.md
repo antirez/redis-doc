@@ -116,6 +116,8 @@ Different commands generate different kind of events according to the following 
 * `HINCRBY` generates an `hincrby` event.
 * `HINCRBYFLOAT` generates an `hincrbyfloat` event.
 * `HDEL` generates a single `hdel` event, and an additional `del` event if the resulting hash is empty and the key is removed.
+* `HEXPIRE`, `HEXPIREAT`, `HPEXPIRE`, `HPEXPIREAT` commands all generate `hexpire` events.
+* `HPERSIST` generates a single `hpersist` events.
 * `SADD` generates a single `sadd` event, even in the variadic case.
 * `SREM` generates a single `srem` event, and an additional `del` event if the resulting set is empty and the key is removed.
 * `SMOVE` generates an `srem` event for the source key, and an `sadd` event for the destination key.

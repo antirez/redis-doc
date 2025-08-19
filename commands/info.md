@@ -270,6 +270,7 @@ Here is the meaning of all fields in the **stats** section:
 *   `sync_full`: The number of full resyncs with replicas
 *   `sync_partial_ok`: The number of accepted partial resync requests
 *   `sync_partial_err`: The number of denied partial resync requests
+*   `expired_hash_fields`: The number of hash fields expiration events
 *   `expired_keys`: Total number of key expiration events
 *   `expired_stale_perc`: The percentage of keys probably expired
 *   `expired_time_cap_reached_count`: The count of times that active expiry cycles have stopped early
@@ -449,7 +450,7 @@ The statistics are the number of keys, and the number of keys with an expiration
 
 For each database, the following line is added:
 
-*   `dbXXX`: `keys=XXX,expires=XXX`
+*   `dbXXX`: `keys=XXX,expires=XXX,avg_ttl=XXX,hashes_with_expiry_fields=XXX`
 
 The **debug** section contains experimental metrics, which might change or get removed in future versions.
 It won't be included when `INFO` or `INFO ALL` are called, and it is returned only when `INFO DEBUG` is used.

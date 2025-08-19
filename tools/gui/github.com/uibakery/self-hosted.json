@@ -1,0 +1,8 @@
+{
+    "name": "UI Bakery",
+    "description": "A drag and drop UI builder for web apps on top of Redis and other databases.",
+    "homepage": "https://uibakery.io"
+    "twitter": [
+        "uibakery"
+    ]
+}

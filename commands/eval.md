@@ -8,9 +8,11 @@ These names of input keys are available to the script as the [_KEYS_ global runt
 Any additional input arguments **should not** represent names of keys.
 
 **Important:**
-to ensure the correct execution of scripts, both in standalone and clustered deployments, all names of keys that a script accesses must be explicitly provided as input key arguments.
+To ensure the correct execution of scripts, both in standalone and clustered deployments, all names of keys that a script accesses must be explicitly provided as input key arguments.
 The script **should only** access keys whose names are given as input arguments.
 Scripts **should never** access keys with programmatically-generated names or based on the contents of data structures stored in the database.
+If a key with expiry (TTL) exists at the start of eval, it will not get expired during the evaluation of a script.
+During the evaluation of a Lua script, TTL of a key can go down to zero. After that, it remains zero until the script terminates.
 
 **Note:**
 in some cases, users will abuse Lua EVAL by embedding values in the script instead of providing them as argument, and thus generating a different script on each call to EVAL.

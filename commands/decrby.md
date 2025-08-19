@@ -1,8 +1,7 @@
-Decrements the number stored at `key` by `decrement`.
-If the key does not exist, it is set to `0` before performing the operation.
-An error is returned if the key contains a value of the wrong type or contains a
-string that can not be represented as integer.
-This operation is limited to 64 bit signed integers.
+The `DECRBY` command reduces the value stored at the specified `key` by the specified `decrement`.
+If the key does not exist, it is initialized with a value of `0` before performing the operation.
+If the key's value is not of the correct type or cannot be represented as an integer, an error is returned.
+This operation is limited to **64-bit** signed integers.
 
 See `INCR` for extra information on increment/decrement operations.
 

@@ -21,6 +21,8 @@ aliases: [
 
 * To ensure the Linux kernel feature Transparent Huge Pages does not impact Redis memory usage and latency, run the command: `echo never > /sys/kernel/mm/transparent_hugepage/enabled` to disable it. See [Latency Diagnosis - Latency induced by transparent huge pages](https://redis.io/docs/management/optimization/latency/#latency-induced-by-transparent-huge-pages) for additional context. 
 
+* The default operating system limits on mmap counts is likely to be too low, which may result in out of memory exceptions Add `vm.max_map_count = 262144` to `/etc/sysctl.conf`. Then, reboot or run the command `sysctl vm.max_map_count=262144` to activate the setting.
+
 ### Memory
 
 * Ensured that swap is enabled and that your swap file size is equal to amount of memory on your system. If Linux does not have swap set up, and your Redis instance accidentally consumes too much memory, Redis can crash when it is out of memory, or the Linux kernel OOM killer can kill the Redis process. When swapping is enabled, you can detect latency spikes and act on them.

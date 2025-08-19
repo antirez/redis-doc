@@ -7,7 +7,7 @@ Moreover, if you are new to streams, we recommend to read our
 Make sure to understand the concept of consumer group in the introduction
 so that following how this command works will be simpler.
 
-## Consumer groups in 30 seconds
+## Consumer groups in 90 seconds
 
 The difference between this command and the vanilla `XREAD` is that this
 one supports consumer groups.
